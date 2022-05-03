@@ -6,8 +6,8 @@
     <PackageTags>email;smtp;fluent;fluentemail</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/lukencode/FluentEmail/master/assets/fluentemail_logo_64x64.png</PackageIconUrl>
     <PackageIcon>fluentemail_logo_64x64.png</PackageIcon>
-    <PackageProjectUrl>https://github.com/lukencode/FluentEmail</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/lukencode/FluentEmail</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/tidapp/FluentEmail</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/tidapp/FluentEmail</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Version>3.0.2</Version>
 
