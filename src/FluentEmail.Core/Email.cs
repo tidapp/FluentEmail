@@ -492,6 +492,32 @@ namespace FluentEmail.Core
         }
 
         /// <summary>
+        /// Adds recipient variables for batch sending. This is currently only supported by the Mailgun provider. <see href="https://documentation.mailgun.com/en/latest/user_manual.html#batch-sending"/>
+        /// </summary>
+        /// <param name="email">E-mail address of the one of the recipients</param>
+        /// <param name="variables">Recipient variables for recipient referenced by email parameter</param>
+        /// <returns>Instance of the Email class</returns>
+        public IFluentEmail RecipientVariable(string email, Dictionary<string, string> variables)
+        {
+            Data.RecipientVariables.Add(email, variables);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds recipient variables for batch sending. This is currently only supported by the Mailgun provider. <see href="https://documentation.mailgun.com/en/latest/user_manual.html#batch-sending"/>
+        /// </summary>
+        /// <param name="data">Dictionary of recipients as key and recipient variables as value.</param>
+        /// <returns>Instance of the Email class</returns>
+        public IFluentEmail RecipientVariables(Dictionary<string, Dictionary<string, string>> data)
+        {
+            foreach (var x in data)
+                Data.RecipientVariables.Add(x.Key, x.Value);
+
+            return this;
+        }
+
+        /// <summary>
         /// Sends email synchronously
         /// </summary>
         /// <returns>Instance of the Email class</returns>

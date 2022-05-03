@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using FluentEmail.Core;
@@ -73,6 +74,12 @@ namespace FluentEmail.Mailgun
             if (!string.IsNullOrEmpty(email.Data.PlaintextAlternativeBody))
             {
                 parameters.Add(new KeyValuePair<string, string>("text", email.Data.PlaintextAlternativeBody));
+            }
+
+            if (email.Data.RecipientVariables.Count > 0)
+            {
+                string json = JsonSerializer.Serialize(email.Data.RecipientVariables);
+                parameters.Add(new KeyValuePair<string, string>("recipient-variables", json));
             }
 
             email.Data.Tags.ForEach(x =>
