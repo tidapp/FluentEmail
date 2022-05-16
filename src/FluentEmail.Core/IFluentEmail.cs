@@ -256,5 +256,20 @@ namespace FluentEmail.Core
         /// <param name="data">Dictionary of recipients as key and recipient variables as value.</param>
         /// <returns>Instance of the Email class</returns>
         IFluentEmail RecipientVariables(Dictionary<string, Dictionary<string, string>> data);
+
+        /// <summary>
+        /// Adds a single variable to the email messages. This is currently only supported by the Mailgun provider. <see href="https://documentation.mailgun.com/en/latest/user_manual.html#attaching-data-to-messages"/>
+        /// </summary>
+        /// <param name="name">Variable name</param>
+        /// <param name="value">Variable value</param>
+        /// <returns>Instance of the Email class</returns>
+        public IFluentEmail Variable(string name, string value);
+
+        /// <summary>
+        /// Adds variables to the email messages. This is currently only supported by the Mailgun provider. <see href="https://documentation.mailgun.com/en/latest/user_manual.html#attaching-data-to-messages"/>
+        /// </summary>
+        /// <param name="variables">Variables</param>
+        /// <returns>Instance of the Email class</returns>
+        public IFluentEmail Variable(IDictionary<string, string> variables);
     }
 }

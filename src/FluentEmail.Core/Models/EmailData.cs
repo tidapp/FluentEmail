@@ -20,6 +20,7 @@ namespace FluentEmail.Core.Models
         public IDictionary<string, string> Headers { get; set; }
 
         public Dictionary<string, Dictionary<string, string>> RecipientVariables { get; set; }
+        public IDictionary<string, string> Variables { get; set; }
 
         public EmailData()
         {
@@ -31,6 +32,7 @@ namespace FluentEmail.Core.Models
             Tags = new List<string>();
             Headers = new Dictionary<string, string>();
             RecipientVariables = new Dictionary<string, Dictionary<string, string>>();
+            Variables = new Dictionary<string, string>();
         }
     }
 }

@@ -82,6 +82,11 @@ namespace FluentEmail.Mailgun
                 parameters.Add(new KeyValuePair<string, string>("recipient-variables", json));
             }
 
+            email.Data.Variables.ForEach(x =>
+            {
+                parameters.Add(new KeyValuePair<string, string>($"v:{x.Key}", x.Value));
+            });
+
             email.Data.Tags.ForEach(x =>
             {
                 parameters.Add(new KeyValuePair<string, string>("o:tag", x));

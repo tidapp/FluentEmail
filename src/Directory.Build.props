@@ -9,7 +9,7 @@
     <PackageProjectUrl>https://github.com/tidapp/FluentEmail</PackageProjectUrl>
     <RepositoryUrl>https://github.com/tidapp/FluentEmail</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>3.0.4</Version>
+    <Version>3.0.6</Version>
 
 
     <PublishRepositoryUrl>true</PublishRepositoryUrl>

@@ -518,6 +518,32 @@ namespace FluentEmail.Core
         }
 
         /// <summary>
+        /// Adds a single variable to the email messages. This is currently only supported by the Mailgun provider. <see href="https://documentation.mailgun.com/en/latest/user_manual.html#attaching-data-to-messages"/>
+        /// </summary>
+        /// <param name="name">Variable name</param>
+        /// <param name="value">Variable value</param>
+        /// <returns>Instance of the Email class</returns>
+        public IFluentEmail Variable(string name, string value)
+        {
+            Data.Variables.Add(name, value);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds variables to the email messages. This is currently only supported by the Mailgun provider. <see href="https://documentation.mailgun.com/en/latest/user_manual.html#attaching-data-to-messages"/>
+        /// </summary>
+        /// <param name="variables">Variables</param>
+        /// <returns>Instance of the Email class</returns>
+        public IFluentEmail Variable(IDictionary<string, string> variables)
+        {
+            foreach (var x in variables)
+                Data.Variables.Add(x.Key, x.Value);
+            
+            return this;
+        }
+
+        /// <summary>
         /// Sends email synchronously
         /// </summary>
         /// <returns>Instance of the Email class</returns>
